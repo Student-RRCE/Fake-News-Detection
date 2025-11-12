@@ -1,0 +1,7 @@
+project_id = "doxhtnodikewsimcfepa"
+
+[functions.analyze-news]
+verify_jwt = false
+
+[functions.submit-feedback]
+verify_jwt = false

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VerifyMe</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🛡️ VerifyMe</h1>
+      <p>Fake News Detection</p>
+    </div>
+
+    <div class="content">
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Analyzing content...</p>
+      </div>
+
+      <div id="error" class="error hidden">
+        <p id="error-message"></p>
+        <button id="retry-btn" class="btn btn-secondary">Retry</button>
+      </div>
+
+      <div id="results" class="results hidden">
+        <div class="score-container">
+          <div class="score-circle">
+            <svg width="120" height="120">
+              <circle cx="60" cy="60" r="54" fill="none" stroke="#e0e0e0" stroke-width="12"/>
+              <circle id="score-circle" cx="60" cy="60" r="54" fill="none" stroke-width="12" 
+                      stroke-dasharray="339.292" stroke-dashoffset="339.292" 
+                      transform="rotate(-90 60 60)" stroke-linecap="round"/>
+            </svg>
+            <div class="score-text">
+              <span id="score-value">0</span>
+              <span class="score-label">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="verdict" class="verdict"></div>
+        
+        <div class="analysis">
+          <h3>Analysis</h3>
+          <p id="analysis-text"></p>
+        </div>
+
+        <div class="indicators">
+          <h3>Key Indicators</h3>
+          <ul id="indicators-list"></ul>
+        </div>
+
+        
+      </div>
+
+      <div id="start" class="start">
+        <button id="analyze-page" class="btn btn-primary">Analyze This Page</button>
+        <button id="analyze-selection" class="btn btn-secondary">Analyze Selected Text</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
